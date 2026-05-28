@@ -11,6 +11,8 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
+from ..file_versions.api.views import RegisterView
+
 # API URLS
 urlpatterns = [
     # API base url
@@ -20,6 +22,7 @@ urlpatterns = [
     # path("auth-token/", obtain_auth_token),
     path("api/token/", TokenObtainPairView.as_view()),
     path("api/token/refresh/", TokenRefreshView.as_view()),
+    path("api/register/", RegisterView.as_view()),
 ]
 
 if settings.DEBUG:
